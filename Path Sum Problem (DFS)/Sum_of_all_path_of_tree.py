@@ -3,9 +3,9 @@ class Node:
         self.data = data 
         self.left = self.right = None 
 
-class BinarySearchTree:
-    def __init__(self):
-        self.root = None 
+# class BinarySearchTree:
+#     def __init__(self):
+#         self.root = None 
 
 def findPathSum(root,pathSum):
     if root is None:

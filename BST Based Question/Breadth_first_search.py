@@ -10,23 +10,23 @@ class BinarySearchTree:
         self.root = None 
     
 
-def BFS(root):
-    result = []
-    if not root:
-        return result 
-    q = deque([root])
-    while q:
-        level = []
-        for i in range(len(q)):
-            curr = q.popleft()
-            level.append(curr.data)
+    def BFS(self,root):
+        result = []
+        if not root:
+            return result 
+        q = deque([root])
+        while q:
+            level = []
+            for i in range(len(q)):
+                curr = q.popleft()
+                level.append(curr.data)
 
-            if curr.left:
-                q.append(curr.left)
-            if curr.right:
-                q.append(curr.right)
-        result.append(level)
-    return result 
+                if curr.left:
+                    q.append(curr.left)
+                if curr.right:
+                    q.append(curr.right)
+            result.append(level)
+        return result 
 
 tree = BinarySearchTree()
 tree.root = Node(1)
@@ -38,4 +38,4 @@ tree.root.right.left = Node(6)
 tree.root.right.right = Node(7)
 
 print("Breadth First Search: ")
-print(BFS(tree.root))
+print(tree.BFS(tree.root))

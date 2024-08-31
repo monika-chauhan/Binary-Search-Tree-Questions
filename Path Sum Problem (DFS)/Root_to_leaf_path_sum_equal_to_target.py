@@ -3,9 +3,9 @@ class Node:
         self.data = data 
         self.left = self.right = None 
     
-class BinarySearchTree:
-    def __init__(self):
-        self.root = None 
+# class BinarySearchTree:
+#     def __init__(self):
+#         self.root = None 
     
 
 def Path_sum_root_to_left_equal_target(root,target):
@@ -15,16 +15,16 @@ def Path_sum_root_to_left_equal_target(root,target):
         return True 
     return Path_sum_root_to_left_equal_target(root.left,target - root.data) or Path_sum_root_to_left_equal_target(root.right,target-root.data)
 
-tree = BinarySearchTree()
-tree.root = Node(12)
-tree.root.left = Node(7)
-tree.root.right = Node(1)
-tree.root.left.left = Node(9)
-tree.root.left.right = Node(5)
-tree.root.right.left = Node(10)
-tree.root.right.right = Node(5)
-tree.root.left.left.left = Node(3)
+#tree = BinarySearchTree()
+root = Node(12)
+root.left = Node(7)
+root.right = Node(1)
+root.left.left = Node(9)
+root.left.right = Node(5)
+root.right.left = Node(10)
+root.right.right = Node(5)
+root.left.left.left = Node(3)
 
 print("Path Sum is equal to target: ")
-target = 12
-print(Path_sum_root_to_left_equal_target(tree.root,target))
+target = 23
+print(Path_sum_root_to_left_equal_target(root,target))
